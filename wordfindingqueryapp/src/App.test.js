@@ -1,6 +1,9 @@
 
 
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
+import { screen, render } from '@testing-library/react'
+import userEvent from '@testing-library/user-event';
+import { waitFor } from '@testing-library/dom';
 
 /**
  * Context :
@@ -28,24 +31,33 @@ import SearchOptions from './Components/SearchOptions'
 import SearchResults from './Components/SearchResults'
 
 describe('App', () => {
-  let AppWrapper;
-  beforeAll(()=> {AppWrapper = shallow(<App />)})
+  let AppShallowWrapper;
+  beforeAll(()=> {AppShallowWrapper = shallow(<App />)})
 
   it('contains a search bar', () => {
-    expect(AppWrapper.contains(<SearchBar />)).toBe(true)
+    expect(AppShallowWrapper.find(SearchBar).length).toBe(1)
   })
 
   it('contains search options', ()=>{
-    expect(AppWrapper.contains(<SearchOptions />)).toBe(true)
+    expect(AppShallowWrapper.contains(<SearchOptions />)).toBe(true)
   })
 
   it('contains the search results', () => {
-    expect(AppWrapper.contains(<SearchResults />)).toBe(true)
+    expect(AppShallowWrapper.find(SearchResults).length).toBe(1)
   })
 
-  describe('Can obtain a word from the SearchBar & pass it as a prop to SearchResults', ()=> {
-    it('has a function to pass a value/prop to SearchResults', () => {
+  describe('Can obtain a word from the SearchBar & display the data in SearchResults', ()=> {
+    it('returns the data when we click on the search button', async () => {
+      render(<App />);
+      const searchBarInput = screen.getByTestId('SearchBarInput');
+      const searchBarButton = screen.getByTestId('SearchBarButton')
+      const searchResults = screen.getByTestId('SearchResults');
       
+      userEvent.type(searchBarInput,'test')
+      userEvent.click(searchBarButton)
+      await waitFor(() =>
+        expect(searchResults.childElementCount > 5).toBe(true)
+      )
     })
   })
   

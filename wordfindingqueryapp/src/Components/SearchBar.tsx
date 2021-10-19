@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default () => {
+import {getResultsForADefinedSearchWordType} from '../App'
+
+type SearchBarPropsTypes = {
+    callback: getResultsForADefinedSearchWordType;
+}
+
+export default (props: SearchBarPropsTypes) => {
+    const [word, setWord] = useState("")
+
     return(
         <div className="SearchBar">
-            <input className="SearchBarInput"></input>
-            <button className="SearchBarButton">Search</button>
+            <input data-testid="SearchBarInput" className="SearchBarInput" onChange={event => setWord(event.target.value)}></input>
+            <button data-testid="SearchBarButton" className="SearchBarButton" onClick={()=>{props.callback(word)}}>Search</button>
         </div>
     )
 }

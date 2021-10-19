@@ -7,19 +7,16 @@ describe('SearchBar',()=>{
         SearchBarWrapper = shallow(<SearchBar />)
     })
 
-    it('has an input', ()=>{
-        const input = SearchBarWrapper.find('.SearchBarInput');
-        expect(input.exists()).toBe(true)
-        expect(input.type()).toEqual('input')
+    it('contains an input', ()=>{
+        const searchInput = SearchBarWrapper.find('.SearchBarInput');
+        expect(searchInput.exists()).toBe(true)
+        expect(searchInput.type()).toEqual('input')
     })
 
-    it('has a search button', () => {
-        const button = SearchBarWrapper.find('.SearchBarButton');
-        expect(button.exists()).toBe(true);
-        expect(button.type()).toEqual('button')
+    it('contains a search button', () => {
+        const searchButton = SearchBarWrapper.find('.SearchBarButton');
+        expect(searchButton.exists()).toBe(true);
+        expect(searchButton.type()).toEqual('button')
     })
 
-    it('returns the data when we click on the search button', () => {
-        
-    })
 })
