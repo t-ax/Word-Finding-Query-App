@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import SearchBar from './Components/SearchBar'
 import SearchOptions from './Components/SearchOptions'
 import SearchResults from './Components/SearchResults'
@@ -17,7 +17,7 @@ function App() {
   const [receivedData, setReceivedData] = useState<Array<receivedDataType>>([])
   
   let getResultsForADefinedSearchWord: getResultsForADefinedSearchWordType = function (word) {
-    datamuseService.fetchWordData(word,"","sl")
+    datamuseService.fetchWordData(word,"","rel_rhy")
             .then(data=>{setReceivedData(data)})
             .catch((error)=>{expect(false).toBe(true)})
   }

@@ -9,7 +9,7 @@ export default (props : SearchResultsPropsType) => {
     return(
         <div data-testid="SearchResults" className="SearchResults">
             {props.data ? props.data.map(e=>
-                <div key={e.word}>{e.word}</div>
+                <div className="word" key={e.word}>{e.word}</div>
             ):<div>Fail</div>}
         </div>
     )

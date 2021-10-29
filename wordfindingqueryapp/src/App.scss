@@ -1,0 +1,43 @@
+// One Style file because only little styling necessary
+
+* {
+  box-sizing: border-box
+}
+
+.App{
+  position: relative; height: 100%; width: 100%;
+  display: flex; flex-direction: column; justify-content: flex-start; align-items: center; 
+
+  .SearchBar{
+    position: relative; height: 70%; width: 100%; background: #0800ff;
+    display: flex; justify-content: center; align-items: center;
+
+    .SearchBarInput{
+      position:sticky; z-index: 1; top: 5%; 
+      width: 60%; background: transparent;
+      border: none; border-bottom: 1px solid grey;
+      &:focus{outline: none;}
+      
+      font-family:'Times New Roman', Times, serif;
+      font-size: calc(2vw + 2vmin);
+      color: white;
+    }
+    .SearchBarButton{
+      background: transparent;
+      border: none;
+    }
+  }
+  .SearchResults{
+    position: absolute; top: 65%; min-height: 30%; height: auto; width: 80%; background: white;
+    
+    display : grid; grid-template: auto / repeat(3, 1fr);
+    padding: 3% 10% 3%; 
+    .word{
+      font-size: calc(2vw + 1vmin);
+      font-style: italic;
+      color: #0800ff;
+
+    }
+  }
+}
+
