@@ -7,7 +7,7 @@ type SearchBarPropsTypes = {
     callback: getResultsForADefinedSearchWordType;
 }
 
-export default (props: SearchBarPropsTypes) => {
+export default function SearchBar (props: SearchBarPropsTypes){
     const [word, setWord] = useState("")
 
     function handleEnterKey(event: any){
@@ -17,7 +17,7 @@ export default (props: SearchBarPropsTypes) => {
     return(
         <div className="SearchBar">
             <input type="text" data-testid="SearchBarInput" className="SearchBarInput" onChange={event => setWord(event.target.value)} onKeyPress={handleEnterKey} placeholder="What word would you like to rhyme?"></input>
-            <button data-testid="SearchBarButton" className="SearchBarButton" onClick={()=>{props.callback(word)}}><img src={SearchBarImg} /></button>
+            <button data-testid="SearchBarButton" className="SearchBarButton" onClick={()=>{props.callback(word)}}><img src={SearchBarImg} alt="Search"/></button>
         </div>
     )
 }

@@ -10,17 +10,16 @@ type SearchResultsPropsType = {
 
 function classifyReceivedDataByNumberOfSyllables(data : DataType){
     let temp : string[][] = [];
-    data.map((word: receivedDataType) => {
-        if(temp[word.numSyllables-1]===undefined){temp[word.numSyllables-1]=new Array();}
-        temp[word.numSyllables-1].push(word.word);
-    })
+    data.map((word: receivedDataType) => 
+        temp[word.numSyllables-1]===undefined ? temp[word.numSyllables-1]=[word.word] : temp[word.numSyllables-1].push(word.word)
+    )
     return temp;
 }
 export function TESTFUNCTION_classifyReceivedDataByNumberOfSyllables(data : DataType){
     return classifyReceivedDataByNumberOfSyllables(data);
 }
 
-export default (props : SearchResultsPropsType) => {
+export default function SearchResults(props : SearchResultsPropsType)  {
     const [classifiedData, setClassifiedData] = useState<Array<Array<string>>>([])
 
     function classifyDataAndSetState(data : DataType){
@@ -34,8 +33,8 @@ export default (props : SearchResultsPropsType) => {
 
     return(
         <div data-testid="SearchResults" className="SearchResults">
-            {classifiedData.length==0 ? <div className="nothingmessage">Nothing to search or no results...</div> : 
-             classifiedData!=[] ? classifiedData.map((specificNumberOfSyllablesArray: string[], index: number)=>
+            {classifiedData.length===0 ? <div className="nothingmessage">Nothing to search or no results...</div> : 
+             classifiedData!==[] ? classifiedData.map((specificNumberOfSyllablesArray: string[], index: number)=>
                 
                 <div className="wordsection" key={index+1}>
                     <div className="numberOfSyllables">{index+1} Syllables</div>
