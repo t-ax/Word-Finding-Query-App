@@ -56,7 +56,7 @@ describe('App', () => {
       userEvent.type(searchBarInput,'test')
       userEvent.click(searchBarButton)
       await waitFor(() =>
-        expect(searchResults.childElementCount > 5).toBe(true)
+        expect(searchResults.childElementCount > 3).toBe(true)
       )
     })
   })
