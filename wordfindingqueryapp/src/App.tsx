@@ -25,6 +25,9 @@ function App() {
   
   return (
     <div className="App">
+      <div className="header">
+        <h1 className="logo">RhymeZone 2.0</h1>
+      </div>
       <SearchOptions />
       <SearchBar callback={getResultsForADefinedSearchWord}/>
       <SearchResults data={receivedData}/>

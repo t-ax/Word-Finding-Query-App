@@ -1,5 +1,9 @@
 // One Style file because only little styling necessary
 
+$primary_color: #0800ff;
+$logo_linear_color_1: #ffffff;
+$logo_linear_color_2: #978bff;
+
 * {
   box-sizing: border-box
 }
@@ -8,8 +12,24 @@
   position: relative; height: 100%; width: 100%;
   display: flex; flex-direction: column; justify-content: flex-start; align-items: center; 
 
+  .header{
+    width: 100%;
+    background: $primary_color;
+    h1{
+      text-align: center; 
+      font-family: 'Passions Conflict', cursive;
+      background: $logo_linear_color_1;
+      background: -webkit-linear-gradient(to right, $logo_linear_color_1 0%, $logo_linear_color_2 100%);
+      background: -moz-linear-gradient(to right, $logo_linear_color_1 0%, $logo_linear_color_2 100%);
+      background: linear-gradient(to right, $logo_linear_color_1 0%, $logo_linear_color_2 100%);
+      background-clip:text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
   .SearchBar{
-    position: relative; height: 70%; width: 100%; background: #0800ff;
+    position: relative; height: 70%; width: 100%; background: $primary_color;
     display: flex; justify-content: center; align-items: center;
 
     .SearchBarInput{
@@ -35,7 +55,7 @@
     .word{
       font-size: calc(2vw + 1vmin);
       font-style: italic;
-      color: #0800ff;
+      color: $primary_color;
 
     }
   }

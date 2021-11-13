@@ -10,7 +10,7 @@ type SearchBarPropsTypes = {
 export default (props: SearchBarPropsTypes) => {
     const [word, setWord] = useState("")
 
-    function handleEnterKey(event: KeyboardEvent){
+    function handleEnterKey(event: any){
         if(event.key === "Enter") props.callback(word);
     }
 
