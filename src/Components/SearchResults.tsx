@@ -37,7 +37,7 @@ export default (props : SearchResultsPropsType) => {
             {classifiedData.length==0 ? <div className="nothingmessage">Nothing to search or no results...</div> : 
              classifiedData!=[] ? classifiedData.map((specificNumberOfSyllablesArray: string[], index: number)=>
                 
-                <div className="wordsection">
+                <div className="wordsection" key={index+1}>
                     <div className="numberOfSyllables">{index+1} Syllables</div>
                     <div className="wordlist">
                         {specificNumberOfSyllablesArray ? specificNumberOfSyllablesArray.map(word=>

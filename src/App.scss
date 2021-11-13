@@ -70,7 +70,7 @@ $logo_linear_color_2: #978bff;
 
 
     position: relative; height: auto; min-height: calc(100vh - 408px); width: 100%; 
-    .nothingmessage{color: grey; text-align: center; margin-top:2em;}
+    .nothingmessage{position: absolute; width: 100%; color: grey; text-align: center; margin-top:2em;}
     
     padding-top: 3% ; padding-bottom: 3% ; 
     .wordsection{
