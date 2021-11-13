@@ -30,7 +30,7 @@ function App() {
         <div className="links">
           <a href="https://www.rhymezone.com" target="_blank" rel="noreferrer">RhymeZone</a>
           <a href="https://dribbble.com/shots/3148153-Redesign-Dictionary-com?utm_source=Clipboard_Shot&utm_campaign=flama&utm_content=Redesign%20Dictionary.com&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=flama&utm_content=Redesign%20Dictionary.com&utm_medium=Social_Share" target="_blank" rel="noreferrer">Design</a>
-          <a href="#" target="_blank" rel="noreferrer">Source Code</a>
+          <a href="https://github.com/Tariq-Axel/Word-Finding-Query-App" target="_blank" rel="noreferrer">Source Code</a>
           <a href="https://tariqaxel.dev" target="_blank" rel="noreferrer">Portfolio</a>
         </div>
       </div>
