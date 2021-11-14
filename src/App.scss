@@ -1,18 +1,22 @@
 // One Style file because only little styling necessary
 
-// $primary_color: #2438f4;
-// $primary_color: rgb(51, 42, 216);
 $primary_color: #40E0D0;
-$primary_background:#E1EBEE; //Marian Blue
-$secondary_background:#e5ecf0;
-// $logo_linear_color_1: #ffffff;
-// $logo_linear_color_2: #978bff;
-$logo_linear_color_1: #1034A6; //Egyptian Blue
-$logo_linear_color_2: #7474BF;
-$links_background: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 100%);
+$primary_background:#f7f7f7; 
+$secondary_background:#ffffff;
+$logo_linear_color_1: #2a877e; 
+$logo_linear_color_2: #2a877e;
+$links_background: linear-gradient(to right, #2a877e 0%, #2a877e  51%, #3bc7b9 100%);
+
+@mixin headerBackgroundPattern {
+  background-color: #e1ebee;
+  background-image: url("data:image/svg+xml,%3Csvg width='44' height='12' viewBox='0 0 44 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 12v-2L0 0v10l4 2h16zm18 0l4-2V0L22 10v2h16zM20 0v8L4 0h16zm18 0L22 8V0h16z' fill='%2340e0d0' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
 
 
-// .btn-grad {background-image: linear-gradient(to right, #E55D87 0%, #5FC3E4  51%, #E55D87  100%)}
+
+
+
+// .btn-grad {background-image: linear-gradient(to right, #4AC29A 0%, #BDFFF3  51%, #4AC29A  100%)}
 // .btn-grad {
 //    margin: 10px;
 //    padding: 15px 45px;
@@ -37,6 +41,8 @@ $links_background: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 10
 
 
 
+
+
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -49,8 +55,11 @@ $links_background: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 10
   background: $primary_background;
   .header{
     width: 100%;
-    background: $primary_color;
+    
+    @include headerBackgroundPattern;
+
     h1{
+      font-size: 3em;
       text-align: center; 
       font-family: 'Passions Conflict', cursive;
       background: $logo_linear_color_1;
@@ -61,7 +70,7 @@ $links_background: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 10
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .links{height: 30px; display: flex; justify-content: center; align-items: center; }
+    .links{height: 30px;  display: flex; justify-content: center; align-items: center; }
     .links>a{
       background-image: $links_background;
       background-size: 200% auto;
@@ -72,9 +81,9 @@ $links_background: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 10
       font-size: 0.5em;
       font-weight: 900;
       text-decoration: none;
-      color:white;
-      margin-left: 1em;
-      margin-right: 1em;
+      color:#fff;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
 
       transition: transform .4s ease-in-out;
       &:hover{transform: translateY(-8px); background-position: right center;}
@@ -82,28 +91,36 @@ $links_background: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 10
   }
 
   .SearchBar{
-    position: relative; min-height: 300px; width: 100%; background: $primary_color;
+    position: relative; min-height: 300px; width: 100%; 
+    @include headerBackgroundPattern;
     display: flex; justify-content: center; align-items: center;
-
+    
     .SearchBarInput{
       position:relative; z-index: 1; top: 5%; 
-      width: 60%; background: transparent;
-      border: none; border-bottom: 1px solid grey;
+      height: 50px; 
+      
+      border-radius: 20px;
+      // background: transparent;
+      border: none; 
+      // border-bottom: 1px solid grey;
+      padding-left: 20px;
       &:focus{outline: none;}
-      &::placeholder{font-weight: 900; color: #3ec3b5;}
-      font-size: 2em;
-      color: white;
+      &::placeholder{font-weight: 900;color: #9dc9c6; font-size: 0.5em;}
+      font-size: 1.5em;
+      color: #2a877e;
     }
     .SearchBarButton{
+      position: absolute;
       background: transparent;
       border: none;
+      z-index:1;
     }
   }
   .SearchResults{
 
 
-    position: relative; height: auto; min-height: calc(100vh - 408px); width: 100%; 
-    .nothingmessage{position: absolute; width: 100%; color: grey; text-align: center; margin-top:2em;}
+    position: relative; height: auto; min-height: calc(100vh - 455px); width: 100%; 
+    .nothingmessage{position: absolute; font-size: 0.7em; width: 100%; color: grey; text-align: center; margin-top:2em;}
     
     padding-top: 3% ; padding-bottom: 3% ; 
     .wordsection{
@@ -132,7 +149,19 @@ $links_background: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 10
   }
 }
 
+.footer{
+  position: absolute;
+  font-size: 0.5em;
+  font-weight: 400;
+  bottom: 10px;
+  color: grey;
+}
+
+
 @media only screen and (min-width: 750px) {
+
+  .SearchBarInput{width : 60%;}
+  .SearchBarButton{right: 21%;}
   .SearchResults{
     display: grid; grid-template: auto / repeat(2, 1fr);
     padding-left:10%; padding-right:10%;
@@ -144,7 +173,11 @@ $links_background: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 10
 /* Mobile */
 @media only screen and (max-width: 750px) {
   .nothingmessage{font-size: 0.3em;}
-  .SearchBarInput::placeholder{font-size: 0.3em;}
+  .SearchBarInput{
+    width : 90%;
+    &::placeholder{font-size: 0.3em;}
+  }
+  .SearchBarButton{right: 7%;}
   .SearchResults{
     padding-left:0; padding-right:0;
     .wordsection{

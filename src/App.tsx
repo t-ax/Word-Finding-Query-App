@@ -29,7 +29,6 @@ function App() {
         <h1 className="logo">RhymeZone 2.0</h1>
         <div className="links">
           <a href="https://www.rhymezone.com" target="_blank" rel="noreferrer">RhymeZone</a>
-          <a href="https://dribbble.com/shots/3148153-Redesign-Dictionary-com?utm_source=Clipboard_Shot&utm_campaign=flama&utm_content=Redesign%20Dictionary.com&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=flama&utm_content=Redesign%20Dictionary.com&utm_medium=Social_Share" target="_blank" rel="noreferrer">Design</a>
           <a href="https://github.com/Tariq-Axel/Word-Finding-Query-App" target="_blank" rel="noreferrer">Source Code</a>
           <a href="https://www.tariqaxel.com" target="_blank" rel="noreferrer">Portfolio</a>
         </div>
@@ -37,6 +36,7 @@ function App() {
       <SearchOptions />
       <SearchBar callback={getResultsForADefinedSearchWord}/>
       <SearchResults data={receivedData}/>
+      <div className="footer">By Tariq Axel</div>
     </div>
   );
 }
