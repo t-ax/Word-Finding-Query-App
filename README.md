@@ -16,7 +16,7 @@ React.JS, Typescript, SCSS, Jest, Enzyme
 
 ## Design Used
 
-The design is based on the following Dribbble : https://dribbble.com/shots/3148153-Redesign-Dictionary-com?utm_source=Clipboard_Shot&utm_campaign=flama&utm_content=Redesign%20Dictionary.com&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=flama&utm_content=Redesign%20Dictionary.com&utm_medium=Social_Share
+The design is inspired by the following Dribbble : https://dribbble.com/shots/3148153-Redesign-Dictionary-com?utm_source=Clipboard_Shot&utm_campaign=flama&utm_content=Redesign%20Dictionary.com&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=flama&utm_content=Redesign%20Dictionary.com&utm_medium=Social_Share
 
 ## Icons, Images & Other Assets sources
 
