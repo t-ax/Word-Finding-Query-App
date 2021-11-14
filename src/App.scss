@@ -1,11 +1,40 @@
 // One Style file because only little styling necessary
 
-$primary_color: #2438f4;
-$primary_background:#dee7ed;
+// $primary_color: #2438f4;
+// $primary_color: rgb(51, 42, 216);
+$primary_color: #40E0D0;
+$primary_background:#E1EBEE; //Marian Blue
 $secondary_background:#e5ecf0;
-$logo_linear_color_1: #ffffff;
-$logo_linear_color_2: #978bff;
-$links_background:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(50,50,50,1) 100%);;
+// $logo_linear_color_1: #ffffff;
+// $logo_linear_color_2: #978bff;
+$logo_linear_color_1: #1034A6; //Egyptian Blue
+$logo_linear_color_2: #7474BF;
+$links_background: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 100%);
+
+
+// .btn-grad {background-image: linear-gradient(to right, #E55D87 0%, #5FC3E4  51%, #E55D87  100%)}
+// .btn-grad {
+//    margin: 10px;
+//    padding: 15px 45px;
+//    text-align: center;
+//    text-transform: uppercase;
+//    transition: 0.5s;
+//    background-size: 200% auto;
+//    color: white;            
+//    box-shadow: 0 0 20px #eee;
+//    border-radius: 10px;
+//    display: block;
+//  }
+
+//  .btn-grad:hover {
+//    background-position: right center; /* change the direction of the change here */
+//    color: #fff;
+//    text-decoration: none;
+//  }
+
+
+
+
 
 
 * {
@@ -34,7 +63,8 @@ $links_background:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%,
     }
     .links{height: 30px; display: flex; justify-content: center; align-items: center; }
     .links>a{
-      background: $links_background;
+      background-image: $links_background;
+      background-size: 200% auto;
       border-radius: 15px;
       padding: 8px 20px 8px 20px;
       border: 5px solid $links_background;
@@ -42,12 +72,12 @@ $links_background:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%,
       font-size: 0.5em;
       font-weight: 900;
       text-decoration: none;
-      color:rgb(164, 164, 164);
+      color:white;
       margin-left: 1em;
       margin-right: 1em;
 
       transition: transform .4s ease-in-out;
-      &:hover{transform: translateY(-8px)}
+      &:hover{transform: translateY(-8px); background-position: right center;}
     }
   }
 
@@ -60,7 +90,7 @@ $links_background:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%,
       width: 60%; background: transparent;
       border: none; border-bottom: 1px solid grey;
       &:focus{outline: none;}
-      &::placeholder{font-weight: 900; color: rgb(78, 113, 255);}
+      &::placeholder{font-weight: 900; color: #3ec3b5;}
       font-size: 2em;
       color: white;
     }
