@@ -5,6 +5,7 @@ import SearchBar from './Components/SearchBar'
 import SearchOptions from './Components/SearchOptions'
 import SearchResults from './Components/SearchResults'
 import * as datamuseService from './API/datamuse'
+import img_github from './Assets/Images/github.png';
 
 export type getResultsForADefinedSearchWordType = (word: string) => void
 export type receivedDataType = {
@@ -26,12 +27,20 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <h1 className="logo">RhymeZone 2.0</h1>
+        
+        <div className="logo">
+          <h1>RhymeZone 2.0</h1>
+          <div className="links_mobile">
+            <a href="https://github.com/Tariq-Axel/Word-Finding-Query-App" target="_blank" rel="noreferrer"><img src={img_github} alt="github"/></a>
+          </div>
+        </div>
+
         <div className="links">
           <a href="https://www.rhymezone.com" target="_blank" rel="noreferrer">RhymeZone</a>
           <a href="https://github.com/Tariq-Axel/Word-Finding-Query-App" target="_blank" rel="noreferrer">Source Code</a>
           <a href="https://www.tariqaxel.com" target="_blank" rel="noreferrer">Portfolio</a>
         </div>
+        
       </div>
       <SearchOptions />
       <SearchBar callback={getResultsForADefinedSearchWord}/>
