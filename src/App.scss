@@ -106,7 +106,7 @@ $links_background: linear-gradient(to right, #2a877e 0%, #2a877e  51%, #3bc7b9 1
       // border-bottom: 1px solid grey;
       padding-left: 20px;
       &:focus{outline: none;}
-      &::placeholder{font-weight: 900;color: #9dc9c6; font-size: 0.5em;}
+      &::placeholder{font-weight: 900;color: #9dc9c6; font-size: 0.5em; transform: translateY(-20%) }
       font-size: 1.5em;
       color: #2a877e;
     }
