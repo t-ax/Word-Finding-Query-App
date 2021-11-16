@@ -228,7 +228,7 @@ body{overflow:hidden;background: $primary_background;}
 
   .links>a{visibility: hidden; display: none;}
   .links_mobile{
-    position: relative; z-index: 1; img{height: 25px; width: 25px;}
+    position: relative; z-index: 10; img{height: 25px; width: 25px;}
   }
 
   .nothingmessage{font-size: 0.3em;}
