@@ -1,17 +1,25 @@
 // One Style file because only little styling necessary
 
-$primary_color: #40E0D0;
-$primary_background:#f7f7f7; 
+$primary_color: rgb(0, 24, 0);
+$primary_background:#f6f6f6; 
 $secondary_background:#ffffff;
-$logo_linear_color_1: #2a877e; 
+$logo_linear_color_1: rgb(0, 24, 0); 
 $logo_linear_color_2: #2a877e;
 $links_background: linear-gradient(to right, #2a877e 0%, #2a877e  51%, #3bc7b9 100%);
 
-@mixin headerBackgroundPattern {
-  background-color: #e1ebee;
-  background-image: url("data:image/svg+xml,%3Csvg width='44' height='12' viewBox='0 0 44 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 12v-2L0 0v10l4 2h16zm18 0l4-2V0L22 10v2h16zM20 0v8L4 0h16zm18 0L22 8V0h16z' fill='%2340e0d0' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
-}
 
+@font-face {
+  font-family: Bellagium;
+  src: url(./Assets/Fonts/bellagiumdemo.otf);
+}
+@font-face {
+  font-family: Barracuda;
+  src: url(./Assets/Fonts/Barracuda-regular.ttf);
+}
+@font-face {
+  font-family: Gambetta;
+  src: url(./Assets/Fonts/Gambetta-Regular.otf);
+}
 
 
 
@@ -37,32 +45,60 @@ $links_background: linear-gradient(to right, #2a877e 0%, #2a877e  51%, #3bc7b9 1
 //  }
 
 
-
-
+body{overflow:hidden;background: $primary_background;}
 
 
 
 
 * {
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Gambetta', sans-serif;
 }
 
+.loadingContainer{
+  position: absolute; height: 100vh; width: 100%;
+  top: 0; left: 0;
+  overflow:hidden;
+  display: flex; justify-content: center; align-items:center;
+  
+  .loadingScreen{
+    background: rgb(0, 24, 0);
+    position: absolute; z-index: 1000;
+    top:0;
+    width: 100%; height: 100vh;
+  }
+  
+  .loadingtxt{color: white;z-index: 1001;opacity: 0; font-family: 'Bellagium'; }
+}
+
+
+
 .App{
-  position: relative; height: auto; width: 100%;
+  position: relative; height: 100vh; min-height: 100vh; width: 100%;
   display: flex; flex-direction: column; justify-content: flex-start; align-items: center; 
   
   background: $primary_background;
-  .header{
-    
-    width: 100%;
-    
-    @include headerBackgroundPattern;
 
+  transition: all 2s ease-in-out;
+  
+
+  .trees{position: absolute; overflow: hidden; z-index:1; height: 100vh; width: 100%;display: flex;  justify-content: center; align-items: center; }
+  .trees > img{ height: 580px;  width: 580px;}
+  .trees > img:nth-child(1){transform: translate(35%,0%)}
+  .trees > img:nth-child(2){transform: translate(-15%,-15%)}
+  .trees > img:nth-child(3){transform: translate(-40%,5%)}
+
+
+
+  .header{
+    display: flex; justify-content: space-between; align-items: center;
+    padding-left: 2em;padding-right: 2em;
+    width: 100%; height: 10%;
+    
     .logo{position: relative;}
     h1{
-      font-size: 3em;
-      font-family: 'Passions Conflict', cursive;
+      // font-family: 'Passions Conflict', cursive;
+      font-family: 'Bellagium';
       background: $logo_linear_color_1;
       background: -webkit-linear-gradient(to right, $logo_linear_color_1 0%, $logo_linear_color_2 100%);
       background: -moz-linear-gradient(to right, $logo_linear_color_1 0%, $logo_linear_color_2 100%);
@@ -71,44 +107,45 @@ $links_background: linear-gradient(to right, #2a877e 0%, #2a877e  51%, #3bc7b9 1
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .links{height: 30px;  display: flex; justify-content: center; align-items: center; }
+    .links{z-index: 2; height: 30px;  display: flex; justify-content: center; align-items: flex-end; }
     .links>a{
-      background-image: $links_background;
-      background-size: 200% auto;
-      border-radius: 15px;
-      padding: 8px 20px 8px 20px;
-      border: 5px solid $links_background;
-
-      font-size: 0.5em;
+      // background-image: $links_background;
+      // background-size: 200% auto;
+      // border-radius: 15px;
+      // padding: 8px 20px 8px 20px;
+      // border: 5px solid $links_background;
+      font-size: 0.8em;
       font-weight: 900;
       text-decoration: none;
-      color:#fff;
+      color: $primary_color;
       margin-left: 0.5em;
       margin-right: 0.5em;
-
+      cursor: pointer;
       transition: transform .4s ease-in-out;
-      &:hover{transform: translateY(-8px); background-position: right center;}
+      &:hover{transform: translateY(-3px); background-position: right center;}
     }
   }
 
   .SearchBar{
-    position: relative;  width: 100%; 
-    @include headerBackgroundPattern;
+    position: relative;  width: 100%; height: 80%; //this height will change because SearchResult has an auto height
     display: flex; justify-content: center; align-items: center;
     
     .SearchBarInput{
-      position:relative; z-index: 1; top: 5%; 
-      height: 50px; 
+      position:relative; z-index: 1;  
+      height: auto; 
       
-      border-radius: 20px;
-      // background: transparent;
       border: none; 
-      // border-bottom: 1px solid grey;
-      padding-left: 20px;
+      border-radius: 50px;
+      // background: transparent;
+      background:rgb(0, 24, 0);
+      border-bottom: 1px solid grey;
+      
+      padding-left: 40px;
       &:focus{outline: none;}
-      &::placeholder{font-weight: 900;color: #9dc9c6; font-size: 0.5em; transform: translateY(-20%) }
-      font-size: 1.5em;
-      color: #2a877e;
+      &::placeholder{font-weight: 900;color: grey;  }
+      
+      // color: $primary_color;
+      color: white;
     }
     .SearchBarButton{
       position: absolute;
@@ -117,10 +154,9 @@ $links_background: linear-gradient(to right, #2a877e 0%, #2a877e  51%, #3bc7b9 1
       z-index:1;
     }
   }
+
   .SearchResults{
-
-
-    position: relative; height: auto; width: 100%; 
+    position: relative; z-index: 2;height: auto; width: 100%; 
     .nothingmessage{position: absolute; font-size: 0.7em; width: 100%; color: grey; text-align: center; margin-top:2em;}
     
     padding-top: 3% ; padding-bottom: 3% ; 
@@ -150,25 +186,29 @@ $links_background: linear-gradient(to right, #2a877e 0%, #2a877e  51%, #3bc7b9 1
   }
 }
 
-.footer{
-  position: absolute;
-  font-size: 0.5em;
+.myname{
+  position: relative;
+  font-size: 0.6em;
   font-weight: 400;
-  bottom: 10px;
+  text-align: left;
   color: grey;
+  transform: translateY(-100%);
 }
 
 
 @media only screen and (min-width: 750px) {
-  .header{ text-align: center; }
+  .loadingtxt{font-size: 8em;}
+  .header{ 
+    text-align: center; 
+    h1{font-size: 2em;}
+  }
   .links_mobile{position: absolute; visibility:hidden;}
   .SearchBar{
-    min-height: 300px;
-    .SearchBarInput{width : 60%;}
+    .SearchBarInput{width : 60%;font-size: 4em; &::placeholder{ font-size: 0.3em;transform: translateY(-55%)}}
     .SearchBarButton{right: 21%;}
   }
   .SearchResults{
-    min-height: calc(100vh - 455px); 
+    // min-height: calc(100vh - 90vh); 
     display: grid; grid-template: auto / repeat(2, 1fr);
     padding-left:10%; padding-right:10%;
     .wordsection{
@@ -178,30 +218,34 @@ $links_background: linear-gradient(to right, #2a877e 0%, #2a877e  51%, #3bc7b9 1
 }
 /* Mobile */
 @media only screen and (max-width: 750px) {
-  .header{padding-left:5%; height: 100px; }
-  .links>a{visibility: hidden; }
+  
+  .loadingtxt{font-size: 3em;}
+
+  .header{
+    padding-left:5%; height: 100px; width: 100%;
+    h1{font-size: 1.6em;}
+  }
+
+  .links>a{visibility: hidden; display: none;}
   .links_mobile{
-    position: absolute; top:0; right:6%; height:100%;
-    z-index: 1;
-    display: flex; align-items: center;
-    img{height: 25px; width: 25px;}
+    position: relative; z-index: 1; img{height: 25px; width: 25px;}
   }
 
   .nothingmessage{font-size: 0.3em;}
   .SearchBar{
-    min-height: 150px;
+    // min-height: 150px;
     .SearchBarInput{
-      width : 90%;
-      &::placeholder{font-size: 0.3em;}
+      width : 90%; font-size: 2.5em;
+      &::placeholder{font-size: 0.25em;}
     }
     .SearchBarButton{right: 7%;}
   }
   .SearchResults{
-    min-height: calc(100vh - 250px); 
+    // min-height: calc(100vh - 250px); 
     padding-left:0; padding-right:0;
     .wordsection{
       .numberOfSyllables{font-size: 1em;}
-      .wordlist{display: grid; grid-template: auto / repeat(2, 1fr); font-size: 0.7em;}
+      .wordlist{display: grid; grid-template: auto / repeat(2, 1fr); font-size: 0.9em;}
     }
   }
 }

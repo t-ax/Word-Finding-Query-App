@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { receivedDataType } from "../App";
 
-const MESSAGE_WHEN_NO_WORDS = ": ("
+const MESSAGE_WHEN_NO_WORDS = "."
 
 type DataType = Array<receivedDataType>;
 type SearchResultsPropsType = {
