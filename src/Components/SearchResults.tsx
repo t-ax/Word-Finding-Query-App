@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { receivedDataType } from "../App";
+import {gsap} from 'gsap';
 
 const MESSAGE_WHEN_NO_WORDS = "."
 
@@ -21,6 +22,34 @@ export function TESTFUNCTION_classifyReceivedDataByNumberOfSyllables(data : Data
 
 export default function SearchResults(props : SearchResultsPropsType)  {
     const [classifiedData, setClassifiedData] = useState<Array<Array<string>>>([])
+
+    function Animation_DisplayResults(){
+        let tl=gsap.timeline();
+        /**
+         * SearchResults > wordsection (1 syllable, 2 ...) > numberOfSyllables + wordlist
+         */
+         tl.fromTo(('.wordsection'),{
+              top:'200%',
+          },{
+              top:0,
+              delay: .5,
+              stagger:0.15,
+          })
+    
+        tl.fromTo(('.word'),{
+            opacity:0,
+        },{
+            opacity:1,
+            delay: 0.010,
+            stagger:0.010,
+        })
+        tl.set(("body"),{overflow:"auto"})
+      }
+    
+      useEffect(()=>{
+        if(classifiedData.length!==0) Animation_DisplayResults(); 
+      },[classifiedData])
+
 
     function classifyDataAndSetState(data : DataType){
         let result = classifyReceivedDataByNumberOfSyllables(data);

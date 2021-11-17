@@ -85,36 +85,10 @@ function App() {
 
   useEffect(()=>{
     Animation_LoadingScreen();
-    Animation_DisplayResults();
   },[])
 
 
-  function Animation_DisplayResults(){
-    let tl=gsap.timeline();
-    /**
-     * SearchResults > wordsection (1 syllable, 2 ...) > numberOfSyllables + wordlist
-     */
-     tl.fromTo(('.wordsection'),{
-          top:'200%',
-      },{
-          top:0,
-          delay: .5,
-          stagger:0.15,
-      })
-
-    tl.fromTo(('.word'),{
-        opacity:0,
-    },{
-        opacity:1,
-        delay: 0.010,
-        stagger:0.010,
-    })
-    tl.set(("body"),{overflow:"auto"})
-  }
-
-  useEffect(()=>{
-    Animation_DisplayResults(); 
-  },[receivedData])
+  
 
   let getResultsForADefinedSearchWord: getResultsForADefinedSearchWordType = function (word) {
     datamuseService.fetchWordData(word,"","rel_rhy")
@@ -159,9 +133,6 @@ function App() {
 
       <SearchOptions />
       <SearchBar callback={getResultsForADefinedSearchWord}/>
-
-      
-
       <SearchResults data={receivedData}/>
       
     </div>
