@@ -140,7 +140,7 @@ body{overflow:hidden;background: $primary_background;}
       background:rgb(0, 24, 0);
       border-bottom: 1px solid grey;
       
-      padding-left: 40px;
+      padding-left: 30px; padding-right: 60px;
       &:focus{outline: none;}
       &::placeholder{font-weight: 900;color: grey;  }
       
@@ -204,11 +204,12 @@ body{overflow:hidden;background: $primary_background;}
   }
   .links_mobile{position: absolute; visibility:hidden;}
   .SearchBar{
-    .SearchBarInput{width : 60%;font-size: 4em; &::placeholder{ font-size: 0.3em;transform: translateY(-55%)}}
+    .SearchBarInput{width : 60%;font-size: 4em;&::placeholder{ font-size: 58%;}}
     .SearchBarButton{right: 21%;}
   }
   .SearchResults{
     // min-height: calc(100vh - 90vh); 
+    opacity: 0;
     display: grid; grid-template: auto / repeat(2, 1fr);
     padding-left:10%; padding-right:10%;
     .wordsection{
@@ -235,8 +236,9 @@ body{overflow:hidden;background: $primary_background;}
   .SearchBar{
     // min-height: 150px;
     .SearchBarInput{
+      display: flex; justify-content: center; align-items: center;
       width : 90%; font-size: 2.5em;
-      &::placeholder{font-size: 0.25em;}
+      &::placeholder{font-size: 55%;}
     }
     .SearchBarButton{right: 7%;}
   }

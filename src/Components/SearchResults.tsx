@@ -29,8 +29,10 @@ export default function SearchResults(props : SearchResultsPropsType)  {
          * SearchResults > wordsection (1 syllable, 2 ...) > numberOfSyllables + wordlist
          */
          tl.fromTo(('.wordsection'),{
+              opacity: 0,
               top:'200%',
           },{
+              opacity: 1,
               top:0,
               delay: .5,
               stagger:0.15,

@@ -16,7 +16,7 @@ export default function SearchBar (props: SearchBarPropsTypes){
 
     return(
         <div className="SearchBar">
-            <input type="text" data-testid="SearchBarInput" className="SearchBarInput" onChange={event => setWord(event.target.value)} onKeyPress={handleEnterKey} placeholder="What word would you like to rhyme?"></input> {/*What word would you like to rhyme?*/}
+            <input type="text" data-testid="SearchBarInput" className="SearchBarInput" onChange={event => setWord(event.target.value)} onKeyPress={handleEnterKey} placeholder="Words rhyming with..."></input> {/*What word would you like to rhyme?*/}
             <button data-testid="SearchBarButton" className="SearchBarButton" onClick={()=>{props.callback(word)}}><img src={SearchBarImg} alt="Search"/></button>
         </div>
     )
