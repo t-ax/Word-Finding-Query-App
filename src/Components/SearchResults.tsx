@@ -28,6 +28,7 @@ export default function SearchResults(props : SearchResultsPropsType)  {
         /**
          * SearchResults > wordsection (1 syllable, 2 ...) > numberOfSyllables + wordlist
          */
+        tl.set(('.SearchResults'),{visibility: 'visible'})
          tl.fromTo(('.wordsection'),{
               opacity: 0,
               top:'200%',
