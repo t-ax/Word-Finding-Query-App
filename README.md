@@ -12,7 +12,7 @@ Write the word you're looking for in the input bar, results will appear in the b
 
 ## Tech Stack
 
-React.JS, Typescript, SCSS, Jest, Enzyme 
+React.JS, Typescript, SCSS, Jest, Enzyme, GSAP
 
 ## Design Used
 
